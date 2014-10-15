@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 
@@ -50,7 +55,7 @@ months.
 with(totals, hist(steps))
 ```
 
-![plot of chunk unnamed-chunk-4](./PA1_template_files/figure-html/unnamed-chunk-4.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 In this dataset, the mean number of steps taken each day by this individual is
 ``10766`` and
@@ -74,7 +79,7 @@ with(daily_by_interval,
      plot(time, steps, type="l"))
 ```
 
-![plot of chunk unnamed-chunk-5](./PA1_template_files/figure-html/unnamed-chunk-5.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
 The 5-minute interval with the average maximum value in this two months is the
 one between
@@ -145,7 +150,7 @@ totals2 <- aggregate(steps ~ date, activity_full, sum)
 with(totals2, hist(steps, main="Histogram of dataset with NAs replaced"))
 ```
 
-![plot of chunk unnamed-chunk-8](./PA1_template_files/figure-html/unnamed-chunk-8.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
 
 Due to the method we have employed to fill missing values, both histograms
 look almost identical. The main difference is the one with the replaced values
@@ -164,7 +169,7 @@ Median = ``10766``
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-The graph below shows a more irregular step pattern on weekends, with
+The graphs below shows a more irregular step pattern on weekends, with
 lots of highs and lows. The average steps between 10:00 and 20:00 are
 higher on weekends as well, suggesting a more active lifestyle
 at the end of the week.
@@ -200,5 +205,5 @@ with(totals3[totals3$week=="weekend",],
      plot(interval, steps, type="l", main="Average steps on weekends"))
 ```
 
-![plot of chunk unnamed-chunk-10](./PA1_template_files/figure-html/unnamed-chunk-10.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10.png) 
 
